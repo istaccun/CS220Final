@@ -1,0 +1,285 @@
+h1 {
+  font-family: helvetica;
+  font-weight: lighter;
+}
+
+
+#token1, #token2 {
+	height: 80px;
+	width: 90%;
+}
+
+#setupbut{
+  align-left:5%;
+  width: 90%;
+  display: block;
+  position: fixed;
+  bottom: 45%;
+}
+
+
+#homemap {
+/*  position: fixed;
+  bottom: 5%;*/
+  width: 100%;
+  top: 60%;
+}
+
+#gohomebut {
+  align-left:5%;
+  width: 90%;
+  display: block;
+  position: fixed;
+  bottom: 35%;
+}
+
+#usericonimg {
+  border-radius: 40%;
+}
+
+#helpbox {
+  width: 90%;
+  display: block;
+  margin-left: 5%;
+}
+
+#termbox {
+  width: 90%;
+  display: block;
+  margin-left: 5%;
+}
+
+#token3 {
+	width: 90%;
+	font-size: 14px;
+	margin:auto;
+	position: fixed;
+  bottom: 7%;
+  margin-left: 5%;
+}
+
+#settingbuttons {
+  font-size: 10px;
+}
+
+#bottomalignbut {
+  width: 100%;
+  display: block;
+  position: fixed;
+  bottom: 5%;
+}
+
+#alignbody{
+  width: 90%
+}
+
+#alignlist {
+  line-height: 1em;
+  padding:0px;
+  margin:0px;
+}
+
+#actalign {
+  width: 90%;
+}
+#aligndialogue {
+  width: 70%;
+}
+
+h1, h2, h3, h4 {
+	/*font-family: helvetica;*/
+}
+
+.ui-block-a, .ui-block-b {
+	padding-bottom: 0px;
+	height: 90px;
+}
+
+#pagesubtitle {
+	font-size: 14px;
+}
+
+#footertext, h4 {
+	font-size: 10px;
+}
+
+#alignbuttons {
+	width: 100%;
+}
+#timegif {
+	font-size: 50px;
+	font-color: white;
+}
+
+#activatepagealign {
+	width: 90%;
+}
+
+#purchasepagealign {
+	width: 50%;
+}
+
+#continuebutton {
+	position: fixed;
+   	bottom: 0%;
+   	padding-top: 10px;
+   	width: 100%;
+   	height:60px;
+   	font-size: 30px;
+   	border-color: none;
+   	border-radius: 0%;
+
+}
+
+#alignbuttons2 {
+	width: 50%;
+	height:auto;
+	font-size: 10px;
+	padding: 0px;
+}
+
+.formatbut {
+	margin:auto;
+	height: 10px;
+}
+
+#punchpassimg {
+	border-radius: 10%;
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.box    {  
+  width:80%;
+  /*box-shadow:inset 1px 1px 40px 0 rgba(0,0,0,.45);*/
+  border-bottom:2px solid #fff;
+  border-right:2px solid #fff;
+  margin:5% auto 0 auto; 
+  border-radius:5px;
+  overflow:hidden;
+  position: relative;
+}
+
+.box img {
+  display: block;
+}
+
+.overlay    {
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,.75);
+  text-align:center;
+  opacity:0;
+  -webkit-transition: opacity .25s ease;
+  font-size: 50px;
+}
+
+.box:hover .overlay {
+  opacity:1;
+}
+
+.overlay .plus:before{ 
+  content:"Single Ride Token $3";
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top:50%;
+  left:50%;
+  font-family:Helvetica;
+  font-weight:900;
+  color:rgba(255,255,255,.85);
+  font-size:30px;
+  -webkit-transform:translate(-50%, -50%);
+  transform:translate(-50%, -50%);
+}
+
+.overlay .plus2:before{ 
+  content:"10 Rides $30";
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top:50%;
+  left:50%;
+  font-family:Helvetica;
+  font-weight:900;
+  color:rgba(255,255,255,.85);
+  font-size:30px;
+  -webkit-transform:translate(-50%, -50%);
+  transform:translate(-50%, -50%);
+}
+
+
+.overlay.clicked .plus:before{
+  content:"-";
+}
+
+.description {
+  display: block;
+  position: absolute;
+  width:100%;
+  height:30%;
+  background-color: lightblue;
+  bottom:-30%;
+  text-align: center;
+  transition: bottom 0.25s ease;
+}
+
+.description:after {
+  content:"";
+  position: absolute;
+  width:0;
+  height:0;
+  left:50%;
+  border-style:solid;
+  border-color: transparent transparent lightblue transparent;
+  border-width: 16px;
+  top:0;
+  -webkit-transform:translate(-50%, 100%);
+
+}
+
+.overlay.clicked + .description {
+  bottom:0%;
+}
+
+.overlay.clicked + .description:after {
+  -webkit-transform:translate(-50%, -100%);
+}
+
+/*for gif*/
+.animate {
+    height: auto;
+    width: 90%;
+    border: 0px solid #000;
+    -webkit-animation: animate_bg 5s;
+    animation: animate_bg 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animate_bg {
+    0%   {background:red;}
+    50%  {background:green;}
+    100% {background:blue;}
+}
+
+@keyframes animate_bg {
+    0%   {background:red;}
+    50%  {background:green;}
+    100% {background:blue;}
+}
+
+@-webkit-keyframes animate_bg {
+    0%   {background:red;}
+    50%  {background:green;}
+    100% {background:blue;}
+}
+

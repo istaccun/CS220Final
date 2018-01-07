@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<link rel="stylesheet" type="text/css" href="style/main.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="css/themes/mypeter.css" />
+<link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+<script type="text/javascript">
+  $(function(){
+    var $select = $(".1-10");
+    for (i=1;i<=10;i++){
+        $select.append($('<option></option>').val(i).html(i))
+    }
+});
+
+// for live time gif
+  function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- Welcome page for 1st time users -->
+<div data-role="page" id="welcome" >
+
+<!-- /header -->
+    <div role="main" class="ui-content">
+    <br>
+    <br>
+    <br><br><br><br> <br><br>
+        <center><i class="fa fa-bus fa-5x" aria-hidden="true" style="color:#002775;"></i></center>
+
+        <br><br>
+            <center><a id="setupbut" href="#payment_3" class="ui-btn ui-corner-all" >Account Setup</a></center>
+            <center><a id="gohomebut" href="#pageone" class="ui-btn ui-corner-all">This isn't my first time!</a></center>
+
+        </div>
+<div data-role="footer" data-position="fixed" >
+    <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> myPeter: a CS220 creation</h4>
+</div>
+</div>
+<!-- accound edit page for welcome page -->
+
+<div data-role="page" id="payment_3">
+<div data-role="header">
+
+ <h1>Edit Info</h1>
+</div>
+
+<div data-role="main" class="ui-content">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+      <a href="#welcome" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+
+<label for="basic">Name on Card:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="basic">Card Number:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="basic">CVV:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="month" >Expiry Date:</label>
+<input type="month" name="month" id="month" value="" style="border: none" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+<label for="basic">Address Line 1:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="basic">Address Line 2:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+</div>
+
+<center><a href="#editingpopup" data-rel="popup" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" >Save</a></center>
+
+
+<div data-role="popup" id="editingpopup" data-position-to="window">
+  <div data-role="main" class="ui-content"><center><p>Done Editing?<br></p></center>
+  <center><a href="#pageone" class="ui-btn ui-corner-all ui-btn-inline">Yep</a> <a href="#payment_3" class="ui-btn ui-corner-all ui-btn-inline">Nope</a></center>
+  </div>
+</div>
+
+
+<div data-role="footer" data-position="fixed" >
+    <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+</div>
+</div>
+
+  <div data-role="footer" data-position="fixed" >
+      <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+  </div>
+
+
+
+<!-- Home page -->
+<div data-role="page" id="pageone">
+  <div data-role="header" id="headerofpage1">
+    <h1><i class="fa fa-bus" aria-hidden="true"></i> myPeter </h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <!-- <p>Two-column Layout:</p> -->
+
+    <center><div id = "alignbuttons">
+    <div class="ui-grid-a">
+
+      <div class="ui-block-a">
+        <a href="#tokens" class="ui-btn ui-corner-all"><br>myTokens<br> <br></a><br>
+      </div>
+
+      <div class="ui-block-b">
+        <a href="#schedules" class="ui-btn ui-corner-all "><br>mySchedules<br> <br></a>
+      </div>
+
+      <div class="ui-block-a">
+        <a href="#rewards" class="ui-btn ui-corner-all "><br>myRewards<br> <br></a>
+      </div>
+
+      <div class="ui-block-b">
+        <a href="#account" class="ui-btn ui-corner-all"><br>myAccount<br> <br></a>
+      </div>
+
+       <!-- closes ui grid  -->
+      </div>
+
+      </div></center>
+
+      <!-- closes ui content -->
+    </div>
+
+    <div id ="homemap">
+      <center><object height="350px" width="100%" data=https://services.saucontds.com/wellesley-customer-map/ > <embed src=http://www.web-source.net > </embed> Error: Embedded data could not be displayed. </object></center>
+    </div>
+
+    <div data-role="footer" data-position="fixed" >
+      <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+    </div>
+
+  <!-- closes page 1 -->
+  </div>
+
+<!-- Rhea's part starts -->
+
+  <div data-role="page" id="tokens">
+
+  <div data-role="header">
+  <h1>Tokens</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+  </div>
+
+  <body>
+
+      <center><h2> You have 1 inactive token </h2></center>
+
+      <center><div id="tokenbuttons">
+        <a id="token1" href="#activate" class="ui-btn ui-corner-all "><br>Activate Now</a><br>
+        <a id="token2" href="#purchaseoption" class="ui-btn ui-corner-all "><br>Purchase More</a>
+      </div></center>
+
+      <div id="otherbutton">
+       <a id="token3" href="#activatedtoken" class="ui-btn ui-corner-all">Show active tokens</a>
+      </div>
+
+
+  </body>
+
+<!-- Closes tokens -->
+ </div>
+
+
+<div data-role="page" id="activate">
+
+  <div data-role="main" class="ui-content">
+      <a href="#tokens" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+  </div>
+
+  <body>
+  <br>
+    <center><div id="activatepagealign">
+    <center><h2> How many tokens would you like to activate? </h2></center>
+    <select width="90%" class="1-10"></select>
+    <center><h3 id = "pagesubtitle"> Tokens are valid only 30 mins once activated! </h3></center>
+
+    </div></center>
+
+
+
+  </body>
+
+  <a id="continuebutton" href="#activate2" class="ui-btn ui-corner-all " data-rel="popup">Continue <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+
+
+    <div data-role="popup" id="activate2" data-position-to="window">
+      <div data-role="main" class="ui-content"><center><p>Are you sure?<br>This action cannot be undone</p></center>
+      <center><a href="#activatedtoken" class="ui-btn ui-corner-all ui-btn-inline">Yes</a> <a href="#activate" class="ui-btn ui-corner-all ui-btn-inline">No</a></center>
+    </div>
+
+
+</div>
+</div>
+
+<!-- Closes activate -->
+
+<div data-role="page" id="activatedtoken">
+
+  <div data-role="main" class="ui-content">
+      <a href="#tokens" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+
+  </div>
+
+  <body>
+  <br>
+    <center><div id="activatepagealign">
+      <center><h2> 1 TOKEN IS NOW ACTIVE! </h2></center>
+      <center><h3 id = "pagesubtitle"> Show this to the bus driver </h3></center><br>
+		<div class="animate">
+      	<div id="timegif">
+      		<body onload="startTime()">
+      			<div id="txt"></div>
+      		</body>
+	</div>
+
+	</div>
+
+    </div></center>
+
+
+
+  </body>
+
+
+</div>
+</div>
+
+<!-- Closes activatedtoken -->
+
+
+<!-- Begin Purchase screens -->
+
+<div data-role="page" id="purchaseoption">
+
+  <div data-role="main" class="ui-content">
+      <a href="#tokens" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+  </div>
+
+  <body>
+  <br>
+    <center><div id="purchasepagealign">
+    <!-- <center><img src = "img/token.png" width="50%" href="#purchasetoken"></center> -->
+
+    <a href="#purchasetoken">
+    <div class="box">
+      <center><img id="tokenimage" src="img/token.png" width=100% ></center>
+      <div class="overlay">
+        <h1 class="plus"></h1>
+      </div>
+      </div>
+      </a>
+
+
+      <center><h3> OR </h3></center>
+
+      </div></center>
+
+      <a href="#purchasepunch">
+      <div class="box">
+      <center><img id="punchpassimg" src="img/punchpass.jpg" width="100%"></center>
+      <div class="overlay">
+        <h1 class="plus2"></h1>
+      </div>
+      </div>
+      </a>
+
+      </div></center>
+
+  </body>
+
+<!-- Closes purchse option -->
+</div>
+
+<div data-role="page" id="purchasepunch">
+
+  <div data-role="main" class="ui-content">
+      <a href="#purchaseoption" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+  </div>
+
+  <body>
+  <br>
+    <center><div id="activatepagealign">
+    <center><h2> How many punch passes would you like to purchase? </h2></center>
+    <select width="90%" class="1-10"></select>
+    </div></center>
+
+
+
+  </body>
+
+  <a id="continuebutton" href="#cardconfirm" class="ui-btn ui-corner-all " >Continue <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+</div>
+</div>
+
+<!-- new page -->
+
+<div data-role="page" id="purchasetoken">
+  <div data-role="main" class="ui-content">
+      <a href="#purchaseoption" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+  </div>
+
+  <body>
+  <br>
+    <center><div id="activatepagealign">
+    <center><h2> How many tokens would you like to purchase? </h2></center>
+    <select width="90%" class="1-10"></select>
+    </div></center>
+
+
+
+  </body>
+
+  <a id="continuebutton" href="#cardconfirm" class="ui-btn ui-corner-all " >Continue <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+
+
+
+</div>
+</div>
+
+
+<!-- new page -->
+<div data-role="page" id="cardconfirm">
+  <div data-role="main" class="ui-content">
+      <a href="#purchaseoption" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+  </div>
+
+  <body>
+  <br>
+    <center><div id="activatepagealign">
+
+    <center><h2> Would you like to charge $3 to your card ending in 9167?</h2></center>
+    <br><br>
+    <a href ="#edit_continue">Edit Payment Method<a/>
+
+    </div></center>
+
+
+
+  </body>
+
+  <a id="continuebutton" href="#confirmation" class="ui-btn ui-corner-all " >Yes <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+
+</div>
+
+<!-- new page -->
+
+<div data-role="page" id="confirmation">
+
+
+    <div data-role="main" class="ui-content">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+  </div>
+
+  <body>
+
+      <center><h1> Confirmed! </h1></center>
+
+      <center><p>
+      	Your card ending in 9167 was charged $3. <br> <br>
+      	You now have 1 inactive token(s).
+      </p></center>
+
+
+      <div id="otherbutton">
+       <a id="token3" href="#activate" class="ui-btn ui-corner-all">Activate now?</a>
+      </div>
+
+
+  </body>
+
+
+<!-- Closes tokens -->
+ </div>
+
+ <!-- new page -->
+
+<!-- Rhea's part ends -->
+
+<!-- Open Schedules -->
+<div data-role="page" id="reminderconfirm">
+
+
+    <div data-role="main" class="ui-content">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+    </div>
+
+    <body>
+
+      <center><h1> Confirmed! </h1></center>
+
+      <center><p>
+        A reminder has been set on your phone for the [insert time] [insert shuttle name] bus!
+      </p></center>
+
+
+      <div id="otherbutton">
+       <a id="token3" href="#schedules" class="ui-btn ui-corner-all">View more schedules</a>
+      </div>
+
+    </body>
+
+</div>
+
+
+<div data-role="page" data-add-back-btn="true" id="schedules">
+    <div data-role="header">
+        <h1>Schedules</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+        <a style="display:inline; top:0px; left: 2%;" data-rel="back" class="ui-btn ui-icon-arrow-l  ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left">Back</a>
+    </div>
+
+    <body>
+    <center><div id="alignbody">
+        <ul data-role="listview"  data-inset="true">
+            <li><a href="#mit">MIT Exchange Bus</a></li>
+            <li><a href="#senate">Senate Bus</a></li>
+            <li><a href="#shuttle">Mall/Movie Shuttle</a></li>
+        </ul>
+    </div></center>
+    </body>
+
+    <div data-role="footer" data-position="fixed">
+        <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+    </div>
+<!-- Closes schedules -->
+</div>
+
+<!-- Open MIT -->
+<div data-role="page" data-add-back-btn="true" id="mit">
+    <div data-role="header">
+        <h1>MIT Exchange Bus</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+        <a style="display:inline; top:0px; left: 2%;" data-rel="back" class="ui-btn ui-icon-arrow-l  ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left">Back</a>
+    </div>
+
+    <body>
+        <div role="main" class="ui-content" style="padding-top:0px;">
+            <div data-role="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#depart" class="ui-btn-active" >W Chapel</a></li>
+                        <li><a href="#n52" >Bldg n52</a></li>
+                        <li><a href="#kendall" >Kendall Sq</a></li>
+                        <li><a href="#mass" >77 Mass Av</a></li>
+                        <li><a href="#arrive" >W Chapel</a></li>
+                    </ul>
+                </div>
+                <div id="depart"  style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+
+                        <!-- pause -->
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:00am</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >NOON</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >1:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >2:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >3:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >4:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >5:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >6:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:00</a> </li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:00</a> </li>
+                        </ul>
+                </div>
+
+                <div data-role="popup" id="reminderpop" data-position-to="window">
+                  <div data-role="main" class="ui-content"><center><p>Would you like to set a reminder 20 mins before this bus?<br></p></center>
+                  <center><a href="#reminderconfirm" class="ui-btn ui-corner-all ui-btn-inline">Yes</a> <a href="#mit" class="ui-btn ui-corner-all ui-btn-inline">No</a></center>
+                  </div>
+                </div>
+
+                <div id="n52"  style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:45am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:45</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:45</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:35</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >12:35</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >1:40pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >2:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >3:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >4:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >5:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >6:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:40</a></li>
+                        </ul>
+                </div>
+                <div id="kendall" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:00am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:45</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >12:40pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >1:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >2:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >3:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >4:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >5:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >6:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:40</a></li>
+                        </ul>
+                </div>
+                <div id="mass" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:10am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >NOON</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >1:00pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >2:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >3:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >4:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >5:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >6:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >MIDNIGHT</a></li>
+                        </ul>
+                </div>
+                <div id="arrive" style="padding-top:10px;">
+                        <ul  id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:50am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >12:40pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >1:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >2:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >3:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >4:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >5:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >6:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >7:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >8:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >9:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >10:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >11:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop" >12:40am</a></li>
+                        </ul>
+                </div>
+            </div>
+          </div>
+          <!-- <script>
+            function alertTimer(){
+                if (confirm("Are you sure you want to set a 20 minute alert?") == true) {
+                    setTimeout("alert('Bus is here!');", 2000);;
+                } else {
+                    return alert("No alert set.");
+                }
+            }
+          </script> -->
+    </body>
+
+    <div data-role="footer" data-position="fixed" >
+        <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+    </div>
+<!-- Closes MIT -->
+</div>
+
+<!-- Open Senate -->
+<div data-role="page" data-add-back-btn="true" id="senate">
+    <div data-role="header">
+        <h1>Senate Bus</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+        <a style="display:inline; top:0px; left: 2%;" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+    </div>
+
+    <body>
+        <center><div id="alignbody">
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#fri">Friday</a></li>
+                <li><a href="#sat">Saturday</a></li>
+                <li><a href="#sun">Sunday</a></li>
+            </ul>
+        </div></center>
+    </body>
+
+    <div data-role="footer" data-position="fixed" >
+        <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+    </div>
+<!-- Closes Senate -->
+</div>
+
+<!-- Opens Senate Friday -->
+<div data-role="page" data-add-back-btn="true" id="fri">
+    <div data-role="header">
+        <h1>Senate: Friday</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+        <a style="display:inline; top:0px; left: 2%;" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left">Back</a>
+    </div>
+
+    <body>
+        <div role="main" class="ui-content"  style="padding-top:0px;">
+
+            <div data-role="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#depart3" class="ui-btn-active" >W Chapel</a></li>
+                        <li><a href="#harvard" >Harvard</a></li>
+                        <li><a href="#mass77" >77 Mass Av</a></li>
+                        <li><a href="#comm" >Comm Av</a></li>
+                    </ul>
+                </div>
+                <div id="depart3" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >6:00pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >6:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >7:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >7:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >8:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >8:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >9:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >9:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >11:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >11:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >MIDNIGHT</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >12:20am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >1:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >1:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >2:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >2:20</a></li>
+                        </ul>
+                </div>
+
+                <div data-role="popup" id="reminderpop1" data-position-to="window">
+                  <div data-role="main" class="ui-content"><center><p>Would you like to set a reminder 20 mins before this bus?<br></p></center>
+                  <center><a href="#reminderconfirm" class="ui-btn ui-corner-all ui-btn-inline">Yes</a> <a href="#mit" class="ui-btn ui-corner-all ui-btn-inline">No</a></center>
+                  </div>
+                </div>
+
+                <div id="harvard" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >6:40pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >7:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >7:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >8:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >8:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >9:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >9:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >10:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >11:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >MIDNIGHT</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >12:40am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >1:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >1:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >2:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >2:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >3:00</a></li>
+                        </ul>
+                </div>
+                <div id="mass77" style="padding-top:10px;">
+
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >6:50pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >7:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >7:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >8:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >8:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >9:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >9:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >10:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >10:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >11:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >12:10am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >12:50am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >1:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >1:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >2:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >2:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >3:10</a></li>
+                        </ul>
+                </div>
+                <div id="comm" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >7:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >7:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >8:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >8:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >9:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >9:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >10:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >11:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >MIDNIGHT</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >12:20am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >1:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >1:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >2:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >2:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >3:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop1" >3:20</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <!-- <script>
+        function alertTimer(){
+            if (confirm("Are you sure you want to set a 20 minute alert?") == true) {
+                setTimeout("alert('Bus is here!');", 2000);;
+            } else {
+                return alert("No alert set.");
+            }
+        }
+        </script> -->
+    </body>
+    <div data-role="footer" data-position="fixed" >
+        <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+    </div>
+<!-- Closes Senate Friday -->
+</div>
+
+<!-- Opens Senate Saturday -->
+<div data-role="page" data-add-back-btn="true" id="sat">
+    <div data-role="header">
+        <h1>Senate: Saturday</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+        <a style="display:inline; top:0px; left: 2%;" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left">Back</a>
+    </div>
+
+    <body>
+        <div role="main" class="ui-content" style="padding-top:0px;">
+
+            <div data-role="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#depart4" class="ui-btn-active" >W Chapel</a></li>
+                        <li><a href="#harvardsa" >Harvard</a></li>
+                        <li><a href="#mass77sa" >77 Mass Av</a></li>
+                        <li><a href="#commsa" >Comm Av</a></li>
+                    </ul>
+                </div>
+                <div id="depart4" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:00am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >11:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >NOON</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:00pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >3:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >4:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >5:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >6:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >6:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >7:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >7:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >8:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >8:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >11:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >11:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >MIDNIGHT</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >12:20am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:20</a></li>
+                        </ul>
+                </div>
+
+                <div data-role="popup" id="reminderpop2" data-position-to="window">
+                  <div data-role="main" class="ui-content"><center><p>Would you like to set a reminder 20 mins before this bus?<br></p></center>
+                  <center><a href="#reminderconfirm" class="ui-btn ui-corner-all ui-btn-inline">Yes</a> <a href="#mit" class="ui-btn ui-corner-all ui-btn-inline">No</a></center>
+                  </div>
+                </div>
+
+                <div id="harvardsa" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:40am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >11:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >12:40pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:40pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >3:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >4:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >5:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >6:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >7:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >7:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >8:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >8:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >11:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >MIDNIGHT</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >12:40am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >3:00</a></li>
+                        </ul>
+                </div>
+                <div id="mass77sa" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:50am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >11:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >12:50pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:50pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >3:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >4:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >5:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >6:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >7:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >7:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >8:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >8:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >11:50</a>/<li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >12:10am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >12:50am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:10</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >3:10</a></li>
+                        </ul>
+                </div>
+                <div id="commsa" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:00am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >11:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >NOON</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:00pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >3:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >4:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >5:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >6:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >7:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >7:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >8:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >8:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >9:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >10:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >11:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >MIDNIGHT</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >12:20am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >1:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >2:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >3:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >3:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop2" >3:45</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <!-- <script>
+        function alertTimer(){
+            if (confirm("Are you sure you want to set a 20 minute alert?") == true) {
+                setTimeout("alert('Bus is here!');", 2000);;
+            } else {
+                return alert("No alert set.");
+            }
+        }
+        </script> -->
+    </body>
+    <div data-role="footer" data-position="fixed" >
+        <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+    </div>
+<!-- Closes Senate Saturday -->
+</div>
+
+<!-- Opens Senate Sunday -->
+<div data-role="page" data-add-back-btn="true" id="sun">
+    <div data-role="header">
+        <h1>Senate: Sunday</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+        <a style="display:inline; top:0px; left: 2%;" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left">Back</a>
+    </div>
+
+    <body>
+        <div role="main" class="ui-content" style="padding-top:0px;">
+
+            <div data-role="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#depart5" class="ui-btn-active" >W Chapel</a></li>
+                        <li><a href="#harvardsu" >Harvard</a></li>
+                        <li><a href="#mass77su" >77 Mass Av</a></li>
+                        <li><a href="#commsu" >Comm Av</a></li>
+                    </ul>
+                </div>
+                <div id="depart5" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >9:00am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >11:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >1:00pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >3:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >5:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >7:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >9:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >11:00</a></li>
+                        </ul>
+                </div>
+
+                <div data-role="popup" id="reminderpop3" data-position-to="window">
+                  <div data-role="main" class="ui-content"><center><p>Would you like to set a reminder 20 mins before this bus?<br></p></center>
+                  <center><a href="#reminderconfirm" class="ui-btn ui-corner-all ui-btn-inline">Yes</a> <a href="#mit" class="ui-btn ui-corner-all ui-btn-inline">No</a></center>
+                  </div>
+                </div>
+
+                <div id="harvardsu" style="padding-top:10px;">
+
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >9:40am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >11:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >1:40pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >3:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >5:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >7:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >9:40</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >11:40</a></li>
+                        </ul>
+                </div>
+                <div id="mass77su" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >9:50am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >11:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >1:50pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >3:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >5:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >7:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >9:50</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >11:50</a></li>
+                        </ul>
+                </div>
+                <div id="commsu" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >10:00am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >NOON</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >2:00pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >4:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >6:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >8:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >10:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop3" >MIDNIGHT</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <!-- <script>
+        function alertTimer(){
+            if (confirm("Are you sure you want to set a 20 minute alert?") == true) {
+                setTimeout("alert('Bus is here!');", 2000);;
+            } else {
+                return alert("No alert set.");
+            }
+        }
+        </script> -->
+    </body>
+    <div data-role="footer" data-position="fixed" >
+        <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+    </div>
+<!-- Closes Senate Sunday -->
+</div>
+
+<!-- Open Shuttle -->
+<div data-role="page" data-add-back-btn="true" id="shuttle">
+    <div data-role="header">
+        <h1>Mall/Movie Shuttle</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <a href="#pageone" style="display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+        <a style="display:inline; top:0px; left: 2%;" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left">Back</a>
+    </div>
+
+    <body>
+        <div role="main" class="ui-content" style="padding-top:0px;">
+
+            <div data-role="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#founders" class="ui-btn-active">Founders</a></li>
+                        <li><a href="#macys" >Macy's</a></li>
+                        <li><a href="#amc" >AMC</a></li>
+                        <li><a href="#bnn" >BandN</a></li>
+                        <li><a href="#target" >Target</a></li>
+                    </ul>
+                </div>
+                <div id="founders" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview" >
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >11:00am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >1:00pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >3:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >5:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >7:00</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >9:00</a></li>
+                        </ul>
+                </div>
+
+                <div data-role="popup" id="reminderpop4" data-position-to="window">
+                  <div data-role="main" class="ui-content"><center><p>Would you like to set a reminder 20 mins before this bus?<br></p></center>
+                  <center><a href="#reminderconfirm" class="ui-btn ui-corner-all ui-btn-inline">Yes</a> <a href="#mit" class="ui-btn ui-corner-all ui-btn-inline">No</a></center>
+                  </div>
+                </div>
+
+                <div id="macys" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >11:20am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >1:20pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >3:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >5:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >7:20</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >9:20</a></li>
+                        </ul>
+                </div>
+                <div id="amc" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >11:25am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >1:25pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >3:25</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >5:25</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >7:25</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >9:25</a></li>
+                        </ul>
+                </div>
+                <div id="bnn" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >11:30am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >1:30pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >3:30</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >5:30</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >7:30</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >9:30</a></li>
+                        </ul>
+                </div>
+                <div id="target" style="padding-top:10px;">
+                        <ul id="alignlist" data-role="listview">
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >11:35am</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >1:35pm</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >3:35</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >5:35</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >7:35</a></li>
+                            <li><a data-rel="popup" class="ui-btn ui-corner-all " href="#reminderpop4" >9:35</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <!-- <script>
+        function alertTimer(){
+            if (confirm("Are you sure you want to set a 20 minute alert?") == true) {
+                setTimeout("alert('Bus is here!');", 2000);;
+            } else {
+                return alert("No alert set.");
+            }
+        }
+        </script> -->
+    </body>
+
+    <div data-role="footer" data-position="fixed" >
+        <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+    </div>
+<!-- Closes Shuttle -->
+<!-- isabel's part ends -->
+
+<!-- bozena's part begins -->
+<!-- rewards-->
+</div>
+
+   <div data-role="page" id="rewards">
+  <div data-role="header">
+    <h1>Rewards</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+  </div>
+
+  <body>
+    <center><p>
+      Collect rewards as you buy tokens on myPeter. <br>
+      4 tokens until your next free ride!
+    </p> </center>
+    <center><img id="rewardsimg" src="img/rewards.png" width=100% ></center>
+  </body>
+
+
+      <div data-role="footer" data-position="fixed" >
+          <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+      </div>
+<!-- Closes rewards -->
+  </div>
+
+   <div data-role="page" id="account">
+  <div data-role="header">
+    <h1>myAccount</h1>
+  </div>
+
+  <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+
+<body>
+  <div data-role="main" class="ui-content">
+    <center><img id="usericonimg" src="img/user_icon.png" width="30%"> <br>
+    <p>
+      Wendy Wellesley
+    </p>
+    </center>
+      <p><a href="#payment_1" class="ui-btn ui-corner-all">Payment Method</a></p>
+      <p><a href="#settings" class="ui-btn ui-corner-all">Settings</a></p>
+  </div>
+  </body>
+
+  <div data-role="footer" data-position="fixed" >
+      <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+</div>
+</div>
+
+
+<!-- Closes account -->
+<!-- Payment method: subpage of account -->
+
+<div data-role="page" id="payment_2">
+<div data-role="header">
+
+ <h1>Edit Info</h1>
+</div>
+<body>
+
+<div data-role="main" class="ui-content">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+      <a href="#payment_1" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+
+<label for="basic">Name on Card:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="basic">Card Number:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="basic">CVV:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="month" >Expiry Date:</label>
+<input type="month" name="month" id="month" value="" style="border: none" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+<label for="basic">Address Line 1:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="basic">Address Line 2:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+</div>
+
+</body>
+<center><a href="#editingpopup" data-rel="popup" class="ui-shadow ui-btn ui-corner-all ui-btn-inline">Save</a></center>
+
+
+<div data-role="popup" id="editingpopup" data-position-to="window">
+  <div data-role="main" class="ui-content"><center><p>Done Editing?<br></p></center>
+  <center><a href="#payment_1" class="ui-btn ui-corner-all ui-btn-inline">Yep</a> <a href="#payment_2" class="ui-btn ui-corner-all ui-btn-inline">Nope</a></center>
+  </div>
+</div>
+
+
+<div data-role="footer" data-position="fixed" >
+    <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+</div>
+</div>
+
+
+<!-- <div data-role="page" id="payment_2">
+<div data-role="header"> -->
+
+
+<!-- Edit payment info  -->
+<div data-role="page" id="edit_continue">
+<div data-role="header">
+ <h1>Edit Info</h1>
+</div>
+<body>
+
+<div data-role="main" class="ui-content">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+      <a href="#payment_1" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+
+<label for="basic">Name on Card:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="basic">Card Number:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="basic">CVV:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="month" >Expiry Date:</label>
+<input type="month" name="month" id="month" value="" style="border: none" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+<label for="basic">Address Line 1:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+<label for="basic">Address Line 2:</label>
+<input type="text" name="name" id="basic" value="" data-mini="true" />
+</div>
+
+</body>
+<center><a href="#contpopup" data-rel="popup" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" >Continue with purchase </a></center>
+
+
+<div data-role="popup" id="contpopup" data-position-to="window">
+  <div data-role="main" class="ui-content"><center><p>Are you sure?<br></p></center>
+  <center><a href="#cardconfirm" class="ui-btn ui-corner-all ui-btn-inline">Yep</a> <a href="#edit_continue" class="ui-btn ui-corner-all ui-btn-inline">Nope</a></center>
+  </div>
+</div>
+</div>
+
+
+<div data-role="footer" data-position="fixed" >
+    <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+</div>
+
+</div>
+
+
+<!-- account homepage -->
+
+<div data-role="page" id="payment_1" data-theme="a">
+<div data-role="header" data-position="inline">
+        <h1>Payment Method</h1>
+</div><!-- /header -->
+
+    <center><div role="main" class="ui-content" id="actalign">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+      <a href="#account" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+
+      <ul data-role="listview" data-theme="a">
+        <b><p> Billing Information </p></b>
+        <li> Wendy Wellesley
+        <li>XXXXXXXXXXXX1111
+        <li>21 Wellesley College Road
+        <li> Wellesley, MA 02481
+    <p><a href="#payment_2" class="ui-btn ui-corner-all ">Edit</a></p>
+</div>
+</center>
+<div data-role="footer" data-position="fixed" >
+    <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+</div>
+</div>
+
+<!--popup-->
+
+
+
+<!-- /payment method-->
+
+<!-- settings-->
+
+<div data-role="page" id="settings" data-theme="a">
+<div data-role="header" data-position="inline">
+        <h1>Account Settings</h1>
+    </div>
+<!-- /header -->
+    <div role="main" class="ui-content">
+    <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+      <a href="#account" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left"></a>
+
+        <h3>Notification Preferences: </h3>
+            <label for="flip-mini">Bus Status:</label>
+            <select name="flip-mini" id="flip-mini" data-role="slider" data-mini="true">
+            	<option value="off">Off</option>
+            	<option value="on">On</option>
+            </select>
+
+                <label for="flip-mini">Tokens:</label>
+                <select name="flip-mini" id="flip-mini" data-role="slider" data-mini="true">
+                    <option value="off">Off</option>
+                    <option value="on">On</option>
+                </select>
+<br><br><br>
+<div id= "bottomalignbut">
+            <p><a id="settingbuttons" href="#help" class="ui-btn ui-corner-all ui-btn-inline">Help / Report a Problem</a>
+            <a id="settingbuttons" href="#terms" class="ui-btn ui-corner-all ui-btn-inline">Terms of Service and Privacy Policy</a>
+ </div>
+
+        </div>
+<div data-role="footer" data-position="fixed" >
+    <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+</div>
+</div>
+
+
+<!-- /settings-->
+<!-- help -->
+</div>
+
+   <div data-role="page" id="help">
+  <div data-role="header">
+    <h1>Help</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+      <a style="display:inline; top:0px; left: 2%;" data-rel="back" class="ui-btn ui-icon-arrow-l  ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left">Back</a>
+
+  <body>
+    <p id = "helpbox">
+      
+          To ride the peter pan you need to buy a token. To use the token you need to activate it. Once activated, your token is only valid for 30 min, and only for single-ride use.
+<br><br>
+          To set a notification, tap the time of the bus you are planning on taking. Confirm this is the time you would like to set a notification for. 
+<br><br>
+          Collect rewards as you buy tokens on myPeter. 4 tokens until your next free ride!
+<br><br>
+          Still stumped? Send us an email and we'll get back to you ASAP!
+      
+      <br>
+    </p> 
+
+    <center><p>
+    <label for="basic">Your name:</label>
+    <input type="text" name="name" id="basic" value="" data-mini="true" />
+    <label for="basic">Your email:</label>
+    <input type="text" name="name" id="basic" value="" data-mini="true" />
+    <label for="textarea">What can we help with?</label>
+    <textarea cols="40" rows="14" name="textarea" id="textarea"></textarea>
+    </p> </center>
+
+    <center><a href="#helppopup" data-rel="popup" class="ui-shadow ui-btn ui-corner-all ui-btn-inline" >Send</a></center>
+
+
+    <div data-role="popup" id="helppopup" data-position-to="window">
+      <div data-role="main" class="ui-content"><center><p>Thanks! Want to return home?<br></p></center>
+      <center><a href="#pageone" class="ui-btn ui-corner-all ui-btn-inline">Yep</a> <a href="#help" class="ui-btn ui-corner-all ui-btn-inline">Nope</a></center>
+      </div>
+    </div>
+    </body>
+    </div>
+
+      <div data-role="footer" data-position="fixed" >
+          <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+      </div>
+<!-- /help -->
+
+
+<!-- privacy policy -->
+
+</div>
+
+   <div data-role="page" id="terms">
+  <div data-role="header">
+    <h1>Terms and Privacy </h1>
+
+  </div>
+
+  <div data-role="main" class="ui-content">
+      <a href="#pageone" style = "display:inline; top:0px; right: 2%;" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-right"></a>
+      <a style="display:inline; top:0px; left: 2%;" data-rel="back" class="ui-btn ui-icon-arrow-l  ui-btn-icon-notext ui-corner-all ui-shadow ui-nodisc-icon ui-btn-left">Back</a>
+
+  </div>
+
+  <body>
+    <div id = "termbox">
+        <h2>myPeter Terms of Service and Privacy Policy</h2>
+
+   <h3>1. Terms</h3>
+
+     <p>By accessing the website at <a href="http://cs.wellesley.edu">http://cs.wellesley.edu/~mypeter/finalproject/newhome.html#welcome</a>, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.</p>
+
+   <h3>2. Use License</h3>
+
+     <ol type="a">
+       <li>
+         Permission is granted to temporarily download one copy of the materials (information or software) on myPeter's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+
+         <ol type="i">
+           <li>modify or copy the materials;</li>
+           <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+           <li>attempt to decompile or reverse engineer any software contained on myPeter's website;</li>
+           <li>remove any copyright or other proprietary notations from the materials; or</li>
+           <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+         </ol>
+       </li>
+       <li>This license shall automatically terminate if you violate any of these restrictions and may be terminated by myPeter at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.</li>
+     </ol>
+
+   <h3>3. Disclaimer</h3>
+
+     <ol type="a">
+       <li>The materials on myPeter's website are provided on an 'as is' basis. myPeter makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</li>
+       <li>Further, myPeter does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.</li>
+     </ol>
+
+   <h3>4. Limitations</h3>
+
+     <p>In no event shall myPeter or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on myPeter's website, even if myPeter or a myPeter authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
+
+   <h3>5. Accuracy of materials</h3>
+
+     <p>The materials appearing on myPeter's website could include technical, typographical, or photographic errors. myPeter does not warrant that any of the materials on its website are accurate, complete or current. myPeter may make changes to the materials contained on its website at any time without notice. However myPeter does not make any commitment to update the materials.</p>
+
+   <h3>6. Links</h3>
+
+     <p>myPeter has not reviewed all of the sites linked to its website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by myPeter of the site. Use of any such linked website is at the user's own risk.</p>
+
+   <h3>7. Modifications</h3>
+
+     <p>myPeter may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.</p>
+
+   <h3>8. Governing Law</h3>
+
+     <p>These terms and conditions are governed by and construed in accordance with the laws of MA and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
+
+   <h2>Privacy Policy</h2>
+
+     <p>Your privacy is important to us.</p>
+
+     <p>It is myPeter's policy to respect your privacy regarding any information we may collect while operating our website. Accordingly, we have developed this privacy policy in order for you to understand how we collect, use, communicate, disclose and otherwise make use of personal information. We have outlined our privacy policy below.</p>
+
+     <ul>
+       <li>We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned.</li>
+       <li>Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.</li>
+       <li>We will collect and use personal information solely for fulfilling those purposes specified by us and for other ancillary purposes, unless we obtain the consent of the individual concerned or as required by law.</li>
+       <li>Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date.</li>
+       <li>We will protect personal information by using reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use or modification.</li>
+       <li>We will make readily available to customers information about our policies and practices relating to the management of personal information.</li>
+       <li>We will only retain personal information for as long as necessary for the fulfilment of those purposes.</li>
+     </ul>
+     <p>Contacting Us<br>
+<br>
+
+        If there are any questions regarding this privacy policy, you may contact us using the information below.
+
+<br><br>
+        cs.wellesley.edu/~mypeter/finalproject/newhome.html#pageone<br>
+        21 College Road<br>
+        Wellesley, MA 02481<br>
+        USA<br>
+        hscheide@wellesley.edu<br>
+        5079957195<br>
+<br><br>
+
+        Last Edited on 2016-12-07
+
+     </p>
+    </div> 
+  </body>
+
+
+      <div data-role="footer" data-position="fixed" >
+          <h4 id="footertext"> <i class="fa fa-copyright" aria-hidden="true"></i> CS220: Human Computer Interaction 2016</h4>
+      </div>
+<!-- /privacy policy -->
+<!-- terms -->
+<!-- /terms -->
+
+</html>
